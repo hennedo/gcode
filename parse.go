@@ -78,7 +78,10 @@ func ParseLine(s string) (Line, error) {
 				return l, errors.New("missing ) for word comment")
 			}
 		}
-
+		// ignore filetransfer markers
+		if s == "%" || s == "\v" {
+			return l, nil
+		}
 		// check letter
 		if !unicode.IsUpper(rune(s[0])) {
 			return l, errors.New("expected uppercase letter to begin word")
