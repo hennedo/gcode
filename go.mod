@@ -1,4 +1,4 @@
-module github.com/256dpi/gcode
+module github.com/hennedo/gcode
 
 go 1.15
 
